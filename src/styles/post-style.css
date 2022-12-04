@@ -40,7 +40,7 @@
 }
 
 .post-page .post-image {
-    width: 50%;
+    width: 80%;
 }
 
 .post-page .post-image img {
@@ -71,4 +71,17 @@
 .post-page .comments,
 .post-page .time {
     color: grey;
+}
+
+/* Media query */
+@media only screen and (max-width: 768px) {
+    .post-page .post-image {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .post-page .post-image {
+        width: 80%;
+    }
 }
