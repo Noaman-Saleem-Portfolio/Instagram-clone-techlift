@@ -1,0 +1,74 @@
+.post-page {
+    background-color: #000;
+    color: #fff;
+    padding-bottom: 30px;
+}
+
+.post-header {
+    display: flex;
+    /* color: red; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.post-header .user-profile-image {
+    width: 4%;
+}
+
+.post-header img {
+    width: 100%;
+    border: 2px solid red;
+    border-radius: 50%;
+    padding: 2px;
+    margin-top: 3px;
+}
+
+.post-header .user-info p {
+    margin-bottom: 0;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.post-header .user-info .user-name {
+    font-weight: bolder;
+    text-decoration: none;
+    color: #fff;
+}
+
+.post-header .user-info .user-desc {
+    color: grey;
+}
+
+.post-page .post-image {
+    width: 50%;
+}
+
+.post-page .post-image img {
+    width: 100%;
+}
+
+.post-page .post-icons {
+    font-size: 35px;
+    padding-bottom: 10px;
+}
+
+.post-page .post-icons .first {
+    margin-left: 4px;
+}
+
+.post-page .post-icons .second {
+    margin-left: 25px;
+}
+
+.post-page .post-footer {
+    margin-left: 4px;
+}
+
+.post-page .post-footer p {
+    margin-bottom: 0px;
+}
+
+.post-page .comments,
+.post-page .time {
+    color: grey;
+}
