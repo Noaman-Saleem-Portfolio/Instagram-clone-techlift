@@ -23,5 +23,7 @@
 }
 
 .home-header .messanger-logo {
+  text-decoration: none;
+  color: #fff;
   font-size: 32px;
 }

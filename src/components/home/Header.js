@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import { FaAngleDown, FaFacebookMessenger } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -11,9 +12,9 @@ const Header = () => {
             <span className="insta-logo">Instagram</span>
             <FaAngleDown className="insta-logo-icon"></FaAngleDown>
           </div>
-          <div className="messanger-logo">
+          <Link to={"/messages"} className="messanger-logo">
             <FaFacebookMessenger></FaFacebookMessenger>
-          </div>
+          </Link>
         </div>
       </Container>
     </div>

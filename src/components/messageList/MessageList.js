@@ -1,15 +1,15 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import { FaAngleLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 
-import "../../styles/profile.css";
+import "../../styles/message-list.css";
 
-const Profile = () => {
+const MessageList = () => {
   const location = useLocation();
-  const { from } = location.state;
-  // console.log(from);
+  const { idOfUser } = location.state;
+
   let userProfile = [
     {
       userId: "1",
@@ -46,64 +46,23 @@ const Profile = () => {
     },
   ];
 
-  let specificUser = userProfile.find((user) => user.userName === from);
-  // console.log(specificUser.userId);
+  let specificUser = userProfile.find((user) => user.userId === idOfUser);
+  console.log(specificUser);
   return (
-    <div className="profile-page">
-      <Container>
-        <div className="header">
-          <Link to={"/"} style={{ color: "#fff" }}>
-            <FaAngleLeft className="logo"></FaAngleLeft>
-          </Link>
-
-          <span>{specificUser.userName}</span>
-        </div>
-        {/* header */}
-        <div className="statistics">
-          <div className="image">
-            <img src={specificUser.userImage} alt="user image" />
+    <div className="message-list-page">
+      <div className="header">
+        <Container>
+          <div className="header-content">
+            <Link to={"/"} style={{ color: "#000" }}>
+              <FaAngleLeft className="logo"></FaAngleLeft>
+            </Link>
+            <span>{specificUser.userName}</span>
           </div>
-          <div className="social-stats">
-            <div className="posts">
-              13.7 k <br /> Posts
-            </div>
-            <div className="followers">
-              7.8 M <br /> Followers
-            </div>
-            <div className="following">
-              1 <br /> Following
-            </div>
-          </div>
-        </div>
-        {/* statistics */}
-
-        <div className="details">
-          <p className="name">{specificUser.userName}</p>
-          <p className="profession">{specificUser.profession}</p>
-          <p className="userDescription">{specificUser.userDescription}</p>
-          <p className="weblink">{specificUser.weblink}</p>
-        </div>
-        {/* details */}
-
-        <Link
-          to={"/messages"}
-          state={{ idOfUser: specificUser.userId }}
-          className="message-btn btn btn-lg btn-primary">
-          Message
-        </Link>
-
-        <div className="gallary">
-          {specificUser.gallary.map((image, index) => {
-            return (
-              <div className="gallary-image" key={index}>
-                <img src={image} alt="" />
-              </div>
-            );
-          })}
-        </div>
-      </Container>
+        </Container>
+      </div>
+      {/* header */}
     </div>
   );
 };
 
-export default Profile;
+export default MessageList;
