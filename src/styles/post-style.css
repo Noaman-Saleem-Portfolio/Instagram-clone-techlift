@@ -71,6 +71,7 @@
 .post-page .comments,
 .post-page .time {
     color: grey;
+    text-decoration: none;
 }
 
 /* Media query */

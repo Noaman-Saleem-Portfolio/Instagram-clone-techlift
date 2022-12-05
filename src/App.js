@@ -7,6 +7,7 @@ import "./App.css";
 
 import Home from "./components/home/Home";
 import Profile from "./components/profile/Profile";
+import Comments from "./components/comments/Comments";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/user-profile" element={<Profile></Profile>}></Route>
+        <Route path="/comments" element={<Comments></Comments>}></Route>
       </Routes>
     </>
   );

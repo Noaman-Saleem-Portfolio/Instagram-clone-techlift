@@ -1,0 +1,65 @@
+.comments-page {
+    background-color: #000;
+    color: #fff;
+    height: 100vh;
+}
+
+
+
+.comments-page .header {
+    height: 70px;
+    font-size: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.comments-page .header .logo {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.comments-page .header span {
+    font-size: 20px;
+}
+
+
+.comment-content {
+    display: flex;
+    /* color: red; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.comments-page .profile-image {
+    width: 6%;
+}
+
+.comments-page .text {
+    width: 70%;
+}
+
+.comments-page .profile-image img {
+    width: 100%;
+    border: 2px solid red;
+    border-radius: 50%;
+    padding: 2px;
+    margin-top: 3px;
+}
+
+.comments-page .text p {
+    margin-bottom: 0;
+    font-size: 14px;
+    margin-left: 15px;
+}
+
+.comments-page .text p span {
+    font-weight: bolder;
+    text-decoration: none;
+    color: grey;
+}
+
+.comments-page .text .createdAt {
+    color: grey;
+}

@@ -10,7 +10,7 @@ const Post = ({ posts }) => {
     <>
       {posts.map((post, index) => {
         return (
-          <div className="post-page">
+          <div className="post-page" key={index}>
             <Container>
               {/* post-header */}
               <div className="post-header">
@@ -39,9 +39,12 @@ const Post = ({ posts }) => {
               </div>
               <div className="post-footer">
                 <p className="post-title">{post.postTitle}</p>
-                <p className="comments">
+                <Link
+                  to={"/comments"}
+                  state={{ idOfPost: post.postId }}
+                  className="comments">
                   View all {post.numberOfComments} comments
-                </p>
+                </Link>
                 <p className="time">{post.createdAt}</p>
               </div>
             </Container>
