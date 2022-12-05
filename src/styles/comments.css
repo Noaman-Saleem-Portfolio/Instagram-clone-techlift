@@ -1,7 +1,15 @@
 .comments-page {
     background-color: #000;
     color: #fff;
-    height: 100vh;
+    /* height: 100vh; */
+
+    /* auto 100% height */
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    overflow: auto;
 }
 
 
@@ -30,6 +38,7 @@
     /* color: red; */
     padding-top: 10px;
     padding-bottom: 10px;
+    align-items: center;
 }
 
 .comments-page .profile-image {
@@ -62,4 +71,23 @@
 
 .comments-page .text .createdAt {
     color: grey;
+}
+
+.comments-page .body {
+    border-bottom: 1px solid grey;
+}
+
+.comments-page .comment-content .input {
+    width: 100%;
+}
+
+.comments-page .comment-content input {
+    width: 95%;
+    background-color: #000;
+    color: grey;
+    border: 1px solid grey;
+    border-radius: 40px;
+    margin-left: 15px;
+    padding: 7px;
+    padding-left: 15px;
 }

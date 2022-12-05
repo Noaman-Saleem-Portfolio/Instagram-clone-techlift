@@ -41,7 +41,12 @@ const Post = ({ posts }) => {
                 <p className="post-title">{post.postTitle}</p>
                 <Link
                   to={"/comments"}
-                  state={{ idOfPost: post.postId }}
+                  state={{
+                    idOfPost: post.postId,
+                    userImage: post.userImage,
+                    postId: post.postId,
+                    userName: post.userName,
+                  }}
                   className="comments">
                   View all {post.numberOfComments} comments
                 </Link>

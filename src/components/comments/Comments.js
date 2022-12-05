@@ -116,13 +116,42 @@ const Comments = () => {
     },
   ];
   const [posts, setPosts] = useState(allPosts);
+  const [isUpdated, setIsUpdated] = useState(false);
 
   const location = useLocation();
-  const { idOfPost } = location.state;
-  //   console.log(idOfPost);
+  const { idOfPost, userImage, postId, userName } = location.state;
+  // console.log(postId);
+
+  //adComment handler
+  const addComent = (e, text) => {
+    // console.log(post.numberOfComments);
+
+    posts.map((p) => {
+      if (p.postId === postId) {
+        p.comments.push({
+          user: {
+            userName: userName,
+            userDescription: "Head of PTI Political Party",
+            userImage: userImage,
+          },
+          text: text,
+          createdAt: "44m",
+        });
+      }
+    }); //map
+
+    setPosts((pre) => {
+      // console.log("phely wali", pre);
+
+      // console.log(pre);
+      e.target.value = "";
+      setIsUpdated(!isUpdated);
+      return pre;
+    }); //setPosts
+  };
 
   const foundPost = posts.find((post) => post.postId === idOfPost);
-  //   console.log(foundPost.comments);
+  // console.log(foundPost.comments);
   //   foundPost.comments.map((comment) => console.log(comment.user.userName));
 
   return (
@@ -138,6 +167,8 @@ const Comments = () => {
         {/* header */}
         <div className="body">
           {foundPost.comments.map((comment, index) => {
+            console.log(comment.text);
+
             return (
               <div className="comment-content" key={index}>
                 <div className="profile-image">
@@ -154,6 +185,23 @@ const Comments = () => {
           })}
         </div>
         {/* body */}
+
+        <div className="comment-content">
+          <div className="profile-image">
+            <img src={userImage} alt="user image is here" />
+          </div>
+          <div className="input">
+            <input
+              type="text"
+              placeholder="Add a comment ....."
+              onKeyPress={(e) => {
+                if (e.key === "Enter") {
+                  addComent(e, e.target.value);
+                }
+              }}
+            />
+          </div>
+        </div>
       </Container>
     </div>
   );

@@ -12,7 +12,10 @@ const Header = () => {
             <span className="insta-logo">Instagram</span>
             <FaAngleDown className="insta-logo-icon"></FaAngleDown>
           </div>
-          <Link to={"/messages"} className="messanger-logo">
+          <Link
+            state={{ idOfUser: "1" }}
+            to={"/messages"}
+            className="messanger-logo">
             <FaFacebookMessenger></FaFacebookMessenger>
           </Link>
         </div>

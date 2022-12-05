@@ -26,3 +26,35 @@
 .message-list-page .header span {
     font-size: 20px;
 }
+
+/*  */
+.message-list-page .message-detail-area {
+    display: flex;
+    /* color: red; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.message-list-page .message-detail-area .image {
+    width: 6%;
+}
+
+.message-list-page .message-detail-area .image img {
+    width: 100%;
+    border: 2px solid red;
+    border-radius: 50%;
+    padding: 2px;
+    /* margin-top: 3px; */
+}
+
+.message-list-page .message-detail-area .content p {
+    margin-bottom: 0;
+    font-size: 14px;
+    margin-left: 15px;
+}
+
+.message-list-page .message-detail-area .content p.text {
+    text-decoration: none;
+    color: grey;
+}
