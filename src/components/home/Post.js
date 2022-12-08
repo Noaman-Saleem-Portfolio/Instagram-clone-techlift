@@ -13,7 +13,7 @@ import "../../styles/post-style.css";
 const Post = () => {
   const dispatch = useDispatch();
   const { data: posts, status } = useSelector((state) => state.post);
-  console.log(posts);
+  // console.log(posts);
   useEffect(() => {
     dispatch(fetchPosts());
     // const fetchProducts = async () => {
@@ -67,7 +67,7 @@ const Post = () => {
               <div className="post-footer">
                 <p className="post-title">{post.title}</p>
                 <Link to={"/comments"} className="comments">
-                  View all 44 comments
+                  View all {post.comments.length} comments
                 </Link>
                 <p className="time">{post.createdAt.type}</p>
               </div>

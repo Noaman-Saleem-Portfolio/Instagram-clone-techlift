@@ -8,7 +8,7 @@ export const STATUSES = Object.freeze({
 });
 
 const postSlice = createSlice({
-  name: "postData",
+  name: "post",
   initialState: {
     data: [],
     status: STATUSES.IDLE,
@@ -36,7 +36,7 @@ const postSlice = createSlice({
   //   },
 });
 
-export const { setPosts, setStatus } = postSlice.actions;
+const { setPosts, setStatus } = postSlice.actions;
 export default postSlice.reducer;
 
 // Thunks
@@ -56,6 +56,7 @@ export function fetchPosts() {
       //   console.log(response.data);
       dispatch(setPosts(response.data));
       dispatch(setStatus(STATUSES.IDLE));
+      //   console.log(getState());
     } catch (err) {
       console.log(err);
       dispatch(setStatus(STATUSES.ERROR));
